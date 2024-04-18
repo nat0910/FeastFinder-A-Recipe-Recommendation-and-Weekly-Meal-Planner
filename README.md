@@ -107,7 +107,7 @@ Follow these steps to set up the application locally on your machine. This invol
 
   #### Windows
 
-  1.  1. **Navigate to the backend directory**::
+  1. **Navigate to the backend directory**::
 
   ```bash
      cd /Matchmaking_system_backend
