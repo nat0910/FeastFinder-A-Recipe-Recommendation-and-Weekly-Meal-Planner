@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState, createContext } from "react";
 import { setSession, clearSession } from "../functions/authFunctions";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -9,6 +9,7 @@ const authProviderUrl = "http://127.0.0.1:5000";
 
 export default function AuthProvider({ children }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const getStorageKey = localStorage.getItem("storageKey");
   const storedData = JSON.parse(localStorage.getItem(getStorageKey)) || {};
@@ -196,10 +197,15 @@ export default function AuthProvider({ children }) {
   }, [authState]);
 
   useEffect(() => {
-    if (!user || !authState.accessToken) {
+    if (
+      !user ||
+      (!authState.accessToken && location.pathname !== "/signup") ||
+      location.pathname !== "/login" ||
+      location.pathname !== "/reset-password"
+    ) {
       navigate("/login");
     }
-  }, [user, authState]);
+  }, [user, authState, location]);
 
   useEffect(() => {
     return () => {};
