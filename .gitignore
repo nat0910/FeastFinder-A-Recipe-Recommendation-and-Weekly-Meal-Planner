@@ -3,7 +3,6 @@ Matchmaking_system_modelll
 migrations
 Matchmaking_system_modelll
 new folder
-trained_model
-# instance
+*.db
 logs
 modell

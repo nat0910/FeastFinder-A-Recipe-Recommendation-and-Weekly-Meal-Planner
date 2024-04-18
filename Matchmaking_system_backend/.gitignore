@@ -1,5 +1,6 @@
 __pycache__
 .venv
+.env
 .md
 recommendation_dataset.csv
 recommendation_dataset_copy.csv
