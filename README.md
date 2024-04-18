@@ -344,6 +344,4 @@ docker-compose up --build
 - **Environment Variables**: Confirm that all required environment variables are set in `.env` or your OS.
 
 ## Reference
-
-- The dataset used in this application is from [here](https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews).
 - The Annoy model used int this application docs can be viewed [here](https://github.com/spotify/annoy)
