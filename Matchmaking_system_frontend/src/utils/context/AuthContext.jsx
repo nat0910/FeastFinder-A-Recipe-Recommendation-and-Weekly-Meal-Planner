@@ -205,7 +205,7 @@ export default function AuthProvider({ children }) {
     ) {
       navigate("/login");
     }
-  }, [user, authState, location]);
+  }, [user, authState]);
 
   useEffect(() => {
     return () => {};
