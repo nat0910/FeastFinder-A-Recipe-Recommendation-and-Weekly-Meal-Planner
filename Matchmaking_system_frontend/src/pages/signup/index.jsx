@@ -19,45 +19,9 @@ export default function RegistrationPage() {
     e.preventDefault();
 
     setIsLoading(true);
-
-    if (errorRef.current) errorRef.current.textContent = "";
-    if (successRef.current) successRef.current.textContent = "";
-
-    if (passwordRef.current.value !== cnfpasswordRef.current.value) {
-      alert("Passwords do not match!");
-      setIsLoading(false);
-    }
-
-    const emailPattern = new RegExp(
-      "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}"
-    );
-
-    if (!emailPattern.test(usernameRef.current.value)) {
-      if (errorRef.current) {
-        errorRef.current.textContent = "Please enter a valid Email Address";
-        setIsLoading(false);
-      }
-    }
-
-    if (!usernameRef.current.value.trim() == "") {
-      if (errorRef.current) {
-        errorRef.current.textContent = "Please enter your Full Name";
-        setIsLoading(false);
-      }
-    }
-
     const passwordPattern = new RegExp(
       "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
     );
-
-    if (!passwordPattern.test(passwordRef.current.value)) {
-      if (errorRef.current) {
-        errorRef.current.textContent =
-          "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
-        setIsLoading(false);
-      }
-    }
-    // Here you would typically handle the form submission to your backend.
 
     let formData = {
       username: usernameRef.current.value,
@@ -67,14 +31,34 @@ export default function RegistrationPage() {
       diet_type: dietTypeRef.current.value,
     };
 
-    handleSignUp(formData, errorRef, successRef, setIsLoading);
-    usernameRef.current.value = "";
-    emailRef.current.value = "";
-    passwordRef.current.value = "";
-    ageRef.current.value = "";
-    dietTypeRef.current.value = "";
+    if (errorRef.current) errorRef.current.textContent = "";
+    if (successRef.current) successRef.current.textContent = "";
+    const emailPattern = new RegExp(
+      "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}"
+    );
+    if (passwordRef.current.value !== cnfpasswordRef.current.value) {
+      alert("Passwords do not match!");
+      setIsLoading(false);
+    } else if (!emailPattern.test(usernameRef.current.value)) {
+      if (errorRef.current) {
+        errorRef.current.textContent = "Please enter a valid Email Address";
+        setIsLoading(false);
+      }
+    } else if (!passwordPattern.test(passwordRef.current.value)) {
+      if (errorRef.current) {
+        errorRef.current.textContent =
+          "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.";
+        setIsLoading(false);
+      }
+    } else {
+      handleSignUp(formData, errorRef, successRef, setIsLoading);
+      usernameRef.current.value = "";
+      emailRef.current.value = "";
+      passwordRef.current.value = "";
+      ageRef.current.value = "";
+      dietTypeRef.current.value = "";
+    }
   };
-
   useEffect(() => {
     const getStorageKey = localStorage.getItem("storageKey");
     const storedData = JSON.parse(localStorage.getItem(getStorageKey)) || {};
