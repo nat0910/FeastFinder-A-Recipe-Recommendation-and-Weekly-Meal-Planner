@@ -107,21 +107,21 @@ Follow these steps to set up the application locally on your machine. This invol
 
   1. **Navigate to the backend directory**::
 
-  ```bash
-     cd /Matchmaking_system_backend
-  ```
+      ```bash
+        cd /Matchmaking_system_backend
+      ```
 
   2. **Set up a Python virtual environment**:
 
-  ```cmd
-    python -m venv venv .\venv\Scripts\activate
-  ```
+      ```cmd
+        python -m venv venv .\venv\Scripts\activate
+      ```
 
   3. **Install Python dependencies**:
 
-  ```cmd
-    pip install -r requirements.txt
-  ```
+      ```cmd
+        pip install -r requirements.txt
+      ```
 
   4. **Set environment variables**:
      The .env file typically resides in the root directory of your project where it can be easily accessed by your application during runtime. Here’s how you can set it up and use it:
@@ -129,30 +129,30 @@ Follow these steps to set up the application locally on your machine. This invol
      1. Create a `.env` File: In the root of your Flask project, create a new file named `.env`.
      1. Populate the `.env` File: Here’s an example of what you should include in a .`env` file for a Flask application:
 
-     ```bash
-       SECRET_KEY = your_very_secret_key_here
-       DATABASE_URL = 'sqlite:///data/mydatabase.db'
-     ```
+        ```bash
+          SECRET_KEY = your_very_secret_key_here
+          DATABASE_URL = 'sqlite:///data/mydatabase.db'
+        ```
 
   #### Linux / macOS
 
   1. **Navigate to the backend directory**:
 
-  ```bash
-   cd /Matchmaking_system_backend
-  ```
+        ```bash
+        cd /Matchmaking_system_backend
+        ```
 
   2. **Set up a Python virtual environment**:
 
-  ```bash
-    python3 -m venv venv source venv/bin/activate
-  ```
+      ```bash
+        python3 -m venv venv source venv/bin/activate
+      ```
 
   3. **Install Python dependencies**:
 
-  ```bash
-     pip install -r requirements.txt
-  ```
+        ```bash
+          pip install -r requirements.txt
+        ```
 
   ### Frontend Installation
 
@@ -174,29 +174,29 @@ Follow these steps to set up the application locally on your machine. This invol
 
   1. **Navigate to the frontend directory**:
 
-  ```cmd
-  cd /Matchmaking_system_backend
-  ```
+      ```cmd
+      cd /Matchmaking_system_backend
+      ```
 
   2. **Install JavaScript dependencies**:
 
-  ```cmd
-    npm install
-  ```
+      ```cmd
+        npm install
+      ```
 
   #### Linux / macOS
 
   1. **Navigate to the frontend directory**:
 
-  ```bash
-    cd /Matchmaking_system_backend
-  ```
+      ```bash
+        cd /Matchmaking_system_backend
+      ```
 
   2. **Install JavaScript dependencies**:
 
-     ```bash
-       npm install
-     ```
+        ```bash
+          npm install
+      ```
 
   ### Running the Application
 
