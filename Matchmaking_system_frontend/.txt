@@ -1,0 +1,23 @@
+const categories = [
+  { name: "Breakfast", icon: Images.breakfast },
+  { name: "Lunch", icon: Images.lunch },
+  { name: "Dessert", icon: Images.dessert },
+  { name: "Vegetable", icon: Images.vegetable },
+  { name: "Chicken", icon: Images.chicken },
+  { name: "Indian", icon: Images.indian },
+  { name: "Japanese", icon: Images.japanese },
+];
+
+
+
+      {/* Categories List*/}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-3">
+          <h2 className="text-base sm:text-2xl font-semibold">Categories</h2>
+        </div>
+        <div className="flex overflow-x-auto gap-4 scrollbar-hide">
+          {categories.map((category, index) => (
+            <CategoryCard key={index} category={category} />
+          ))}
+        </div>
+      </div>

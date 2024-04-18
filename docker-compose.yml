@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./Matchmaking_system_backend
+    container_name: recipe_recommendation_backend
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_URL: "sqlite:///data/mydatabase.db"
+    restart: always
+    volumes:
+      - ./instance/data:/app/instance/data # Persistent volume for the SQLite database file
+      # - ./trained_model:/app/trained_model # Persistent volume for trained models
+      - ./migrations:/app/migrations # Persistent volume for Alembic migrations
+      - ./logs:/app/logs # Persistent volume for logs
+
+  frontend:
+    build: ./Matchmaking_system_frontend
+    container_name: recipe_recommendation_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: "http://backend:5000" # Ensures frontend can reach backend
+    depends_on:
+      - backend
