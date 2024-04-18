@@ -12,7 +12,9 @@ export default function LoginPage() {
 
   function onLoginSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     handleLogin(emailRef?.current?.value, passwordRef?.current?.value);
+    setIsLoading(false);
   }
   const navigate = useNavigate();
 
@@ -95,7 +97,7 @@ export default function LoginPage() {
                   className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:ring focus:ring-indigo-200 active:bg-indigo-700"
                   disabled={isLoading}
                 >
-                  Sign in
+                  {isLoading ? "Wait" : "Sign in"}
                 </button>
               </div>
             </form>

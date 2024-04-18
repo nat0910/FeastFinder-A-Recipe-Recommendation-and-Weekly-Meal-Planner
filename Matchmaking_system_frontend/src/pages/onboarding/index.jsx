@@ -23,6 +23,7 @@ const InitialState = {
 
 const UserOnboardingForm = () => {
   const [formData, setFormData] = useState(InitialState);
+  const [isFetching, setIsFetching] = useState(false);
 
   const allergiesTypes = [
     "Dairy",
@@ -248,7 +249,7 @@ const UserOnboardingForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsFetching(true);
     if (formData.commonly_used_ingredients.length < 5) {
       alert("Please select at least five ingredients.");
     } else if (formData.preferred_cuisines.length < 3) {
@@ -335,6 +336,8 @@ const UserOnboardingForm = () => {
           setAuthState,
           setUser
         );
+
+        setIsFetching(false);
         navigate("/");
       } catch (error) {
         console.error(
@@ -551,6 +554,7 @@ const UserOnboardingForm = () => {
         <button
           type="submit"
           className="bg-purple-600 text-white p-2 rounded hover:bg-purple-800 mt-5"
+          disabled={isFetching}
         >
           Submit
         </button>
