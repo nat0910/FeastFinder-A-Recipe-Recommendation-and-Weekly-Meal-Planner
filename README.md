@@ -1,7 +1,5 @@
 # FeastFinder
 
-## Introduction
-
 ![FeastFinder Logo](ReadmeAssets/image.png)
 
 FeastFinder is an innovative recipe discovery and meal planning app designed to transform the culinary experience at home. Tailoring to personal dietary needs, from vegan to non-vegetarian, FeastFinder simplifies meal planning and helps discover new and exciting recipes.
