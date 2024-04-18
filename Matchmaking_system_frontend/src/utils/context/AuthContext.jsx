@@ -197,19 +197,17 @@ export default function AuthProvider({ children }) {
   }, [authState]);
 
   useEffect(() => {
-    if (
-      !user ||
-      (!authState.accessToken && location.pathname !== "/signup") ||
-      location.pathname !== "/login" ||
-      location.pathname !== "/reset-password"
-    ) {
+    // Check if there is no user and no access token in local storage
+    const userExists = user || localStorage.getItem("accessToken");
+
+    // Paths where no redirect should occur
+    const nonRedirectPaths = ["/signup", "/reset-password"];
+
+    // Condition for redirection: no user or token, and path is not in the nonRedirectPaths
+    if (!userExists && !nonRedirectPaths.includes(location.pathname)) {
       navigate("/login");
     }
-  }, [user, authState]);
-
-  useEffect(() => {
-    return () => {};
-  }, []);
+  }, [user]);
 
   return (
     <AuthContext.Provider
