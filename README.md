@@ -39,20 +39,20 @@ FeastFinder offers a seamless approach to meal planning, with features tailored 
 
 ## Technologies Used
 
-              | Technology   | Version     |
-              | ------------ | ----------- |
-              | Node.js      | 18.2.0      |
-              | Python       | 3.11        |
-              | Flask        | 3.0.2       |
-              | Annoy        | 1.17.3      |
-              | React        | 18.2.0      |
-              | React Router | 6.22.3      |
-              | TailwindCSS  | 3.4.3       |
-              | Vite         | 5.0.8       |
-              | SQLAlchemy   | 2.0.29      |
-              | numpy        | 1.26.4      |
-              | pandas       | 2.2.1       |
-              | scikit-learn | 1.4.1.post1 |
+  | Technology   | Version     |
+  | ------------ | ----------- |
+  | Node.js      | 18.2.0      |
+  | Python       | 3.11        |
+  | Flask        | 3.0.2       |
+  | Annoy        | 1.17.3      |
+  | React        | 18.2.0      |
+  | React Router | 6.22.3      |
+  | TailwindCSS  | 3.4.3       |
+  | Vite         | 5.0.8       |
+  | SQLAlchemy   | 2.0.29      |
+  | numpy        | 1.26.4      |
+  | pandas       | 2.2.1       |
+  | scikit-learn | 1.4.1.post1 |
 
 ## Leveraging Annoy for Enhanced Recipe Recommendations
 
@@ -105,7 +105,7 @@ Follow these steps to set up the application locally on your machine. This invol
 
   #### Windows
 
-  1.  1. **Navigate to the backend directory**::
+  1. **Navigate to the backend directory**::
 
   ```bash
      cd /Matchmaking_system_backend
